@@ -6,9 +6,9 @@ require "faker"
 		description: Faker::Quote.matz,
 		location: Faker::Mountain.name,
 		category: Faker::Book.genre,
-		date: Date.today,
-		start_time: Time.now,
-		end_time: Time.now + (60 * 60)
+		date: "2023-11-15",
+		start_time: "22:30",
+		end_time: "23:30"
 	)
 end
 
