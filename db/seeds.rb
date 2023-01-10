@@ -7,8 +7,8 @@ require "faker"
 		location: Faker::Mountain.name,
 		category: Faker::Book.genre,
 		date: Date.today,
-		start: Time.now,
-		end: Time.now + (60 * 60)
+		start_time: Time.now,
+		end_time: Time.now + (60 * 60)
 	)
 end
 

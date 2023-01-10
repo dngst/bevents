@@ -15,4 +15,18 @@ $ bin/setup
 
 $ bin/rails s
 
-http://localhost:3000
+[127.0.0.1:3000/graphiql](http://127.0.0.1:3000/graphiql)
+
+```
+query {
+  fetchEvents {
+    id
+    title
+    description
+    category
+    location
+    startTime
+    endTime
+  }
+}
+```
