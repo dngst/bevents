@@ -1,9 +1,4 @@
-# bevents
-
-> A platform for event organizers to create and manage different types of events
-while making them easily accessible to target markets
-
-## Requirements
+# Requirements
 
 - Ruby
 - Bundler
@@ -73,6 +68,15 @@ mutation {
       startTime
       endTime
     }
+  }
+}
+```
+
+Delete event
+```
+mutation {
+  destroyEvent(input: { id: "7" }) {
+    id
   }
 }
 ```
