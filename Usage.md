@@ -57,6 +57,27 @@ mutation {
 }
 ```
 
+Edit event
+```
+mutation {
+  editEvent(input: { id: "17",  params: {
+    title: "Hike 007",
+    description: "Pyramids"
+    location: "Egypt",
+    category: "Hidden texts"
+    date: "2023-12-31",
+    startTime: "02:30",
+    endTime: "4:30"
+  }}) {
+    event {
+      id
+      title
+      location
+    }
+  }
+}
+```
+
 Delete event
 ```
 mutation {
