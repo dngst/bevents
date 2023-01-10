@@ -5,7 +5,7 @@ module Types
     field :description, String
     field :location, String
     field :category, String
-    field :date, GraphQL::Types::ISO8601DateTime
+    field :date, GraphQL::Types::ISO8601Date
     field :start_time, GraphQL::Types::ISO8601DateTime
     field :end_time, GraphQL::Types::ISO8601DateTime
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false

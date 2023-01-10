@@ -50,3 +50,29 @@ query {
   }
 }
 ```
+
+Add event
+```
+mutation {
+  addEvent(input: { params: {
+    title: "event title",
+    description: "event description", 
+    location: "event location",
+    category: "event category",
+    date: "2023-1-15",
+    startTime: "08:00",
+    endTime: "09:00"
+  }}) {
+    event {
+      id
+      title
+      description
+      location
+      category
+      date
+      startTime
+      endTime
+    }
+  }
+}
+```
