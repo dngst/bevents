@@ -52,3 +52,5 @@ end
 
 
 gem "faker", "~> 3.1"
+
+gem "search_object_graphql", "~> 1.0"
