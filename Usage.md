@@ -86,3 +86,13 @@ mutation {
   }
 }
 ```
+
+Search event by title, description, location & category
+
+```
+query {
+  searchEvents(description: "Ruby") {
+    description
+  }
+}
+```
