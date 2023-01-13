@@ -9,6 +9,9 @@ module Resolvers
     option :location, type: String, with: :location_filter
     option :category, type: String, with: :category_filter
 
+    option :first, type: Int, with: :first
+    option :skip, type: Int, with: :skip
+
     def title_filter(s, v)
       s.where 'title ILIKE ?', escape_search_term(v)
     end
@@ -23,6 +26,14 @@ module Resolvers
 
     def category_filter(s, v)
       s.where 'category ILIKE ?', escape_search_term(v)
+    end
+
+    def first(s, v)
+      s.limit(v)
+    end
+
+    def skip(s, v)
+      s.offset(v)
     end
   end
 end

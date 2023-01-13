@@ -96,3 +96,14 @@ query {
   }
 }
 ```
+
+Get x no. of events
+```
+query {
+  searchEvents(first: 10) {
+    id
+    title
+  }
+}
+```
+
