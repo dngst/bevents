@@ -12,11 +12,11 @@ module Mutations
 
       begin
         event.update!(event_params)
-        { event: event }
+        { event: }
       rescue ActiveRecord::RecordInvalid => e
-        GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
-          " #{e.record.errors.full_messages.join(', ')}")
+        GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:" \
+                                    " #{e.record.errors.full_messages.join(', ')}")
       end
     end
   end
-end 
+end

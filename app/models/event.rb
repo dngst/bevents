@@ -14,6 +14,6 @@
 #  updated_at  :datetime         not null
 #
 class Event < ApplicationRecord
-  validates_presence_of :title, :description, :location, :category, :date,
-  :start_time, :end_time
+  validates :title, :description, :location, :category, :date,
+            :start_time, :end_time, presence: true
 end

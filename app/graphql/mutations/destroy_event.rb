@@ -9,11 +9,11 @@ module Mutations
 
       begin
         event.destroy
-        { id: id }
+        { id: }
       rescue ActiveRecord::RecordInvalid => e
-        GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
-          " #{e.record.errors.full_messages.join(', ')}")
+        GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:" \
+                                    " #{e.record.errors.full_messages.join(', ')}")
       end
     end
   end
-end 
+end

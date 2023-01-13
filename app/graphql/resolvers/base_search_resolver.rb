@@ -1,9 +1,8 @@
-require "search_object"
-require "search_object/plugin/graphql"
+require 'search_object'
+require 'search_object/plugin/graphql'
 
 module Resolvers
   class BaseSearchResolver < BaseResolver
-
     include SearchObject.module(:graphql)
 
     def escape_search_term(term)
