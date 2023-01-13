@@ -12,28 +12,28 @@ module Resolvers
     option :first, type: Int, with: :first
     option :skip, type: Int, with: :skip
 
-    def title_filter(s, v)
-      s.where 'title ILIKE ?', escape_search_term(v)
+    def title_filter(scope, value)
+      scope.where 'title ILIKE ?', escape_search_term(value)
     end
 
-    def description_filter(s, v)
-      s.where 'description ILIKE ?', escape_search_term(v)
+    def description_filter(scope, value)
+      scope.where 'description ILIKE ?', escape_search_term(value)
     end
 
-    def location_filter(s, v)
-      s.where 'location ILIKE ?', escape_search_term(v)
+    def location_filter(scope, value)
+      scope.where 'location ILIKE ?', escape_search_term(value)
     end
 
-    def category_filter(s, v)
-      s.where 'category ILIKE ?', escape_search_term(v)
+    def category_filter(scope, value)
+      scope.where 'category ILIKE ?', escape_search_term(value)
     end
 
-    def first(s, v)
-      s.limit(v)
+    def first(scope, value)
+      scope.limit(value)
     end
 
-    def skip(s, v)
-      s.offset(v)
+    def skip(scope, value)
+      scope.offset(value)
     end
   end
 end
