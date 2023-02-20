@@ -10,5 +10,6 @@ module Types
     field :start_time, GraphQL::Types::ISO8601DateTime
     field :title, String
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :user_id, Integer
   end
 end

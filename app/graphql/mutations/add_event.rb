@@ -6,15 +6,12 @@ module Mutations
 
     def resolve(params:)
       event_params = Hash params
-
-      begin
-        event = Event.create!(event_params)
-
-        { event: }
-      rescue ActiveRecord::RecordInvalid => e
-        GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:" \
-                                    " #{e.record.errors.full_messages.join(', ')}")
-      end
+      event = Event.create!(event_params.merge(user: current_user)) if current_user_present
+      { event: }
+    rescue ActiveRecord::RecordInvalid => e
+      GraphQL::ExecutionError.new(
+        "Invalid attributes for #{e.record.class}: #{e.record.errors.full_messages.join(', ')}"
+      )
     end
   end
 end

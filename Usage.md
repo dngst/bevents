@@ -12,6 +12,7 @@ query {
     location
     startTime
     endTime
+    userId
   }
 }
 ```
@@ -27,7 +28,38 @@ query {
     location
     startTime
     endTime
+    userId
   }
+}
+```
+
+Register
+
+POST localhost:3000/auth
+
+```
+{
+  "email": "dngst@pm.me",
+  "password": "qEo8ZvG9^",
+  "password_confirmation": "qEo8ZvG9^"
+}
+```
+
+Login
+
+POST localhost:3000/auth/sign_in
+
+```
+{
+  "email": "dngst@pm.me",
+  "password": "qEo8ZvG9^"
+}
+```
+
+Pass token
+```
+{
+  "Authorization": "token"
 }
 ```
 
@@ -52,6 +84,7 @@ mutation {
       date
       startTime
       endTime
+      userId
     }
   }
 }
@@ -60,15 +93,11 @@ mutation {
 Edit event
 ```
 mutation {
-  editEvent(input: { id: "17",  params: {
-    title: "Hike 007",
-    description: "Pyramids"
-    location: "Egypt",
-    category: "Hidden texts"
-    date: "2023-12-31",
-    startTime: "02:30",
-    endTime: "4:30"
-  }}) {
+  editEvent(input: {
+    id: "53",
+    title: "let it go",
+    location: "NBO"
+  }) {
     event {
       id
       title

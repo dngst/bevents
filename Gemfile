@@ -14,6 +14,8 @@ gem 'puma', '~> 5.0'
 
 gem 'graphql'
 
+gem 'devise_token_auth', '~> 1.2'
+
 gem 'search_object_graphql', '~> 1.0'
 
 gem 'faker', '~> 3.1'
