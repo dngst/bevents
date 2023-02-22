@@ -1,20 +1,14 @@
 module Mutations
   class EditEvent < Mutations::BaseMutation
-    argument :category, String, required: false
-    argument :date, String, required: false
-    argument :description, String, required: false
-    argument :end_time, String, required: false
     argument :id, ID, required: true
-    argument :location, String, required: false
-    argument :start_time, String, required: false
-    argument :title, String, required: false
+    argument :params, Types::Input::EventInputType, required: true
 
     field :event, Types::EventType, null: false
     field :id, ID, null: true
 
-    def resolve(id:, **args)
+    def resolve(id:, params:)
       event = Event.find(id)
-      event_params = Hash args
+      event_params = Hash params
 
       event.update!(event_params) if authorize_user(event)
       { event: }
