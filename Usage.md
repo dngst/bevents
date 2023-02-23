@@ -56,13 +56,6 @@ POST localhost:3000/auth/sign_in
 }
 ```
 
-Pass token
-```
-{
-  "Authorization": "token"
-}
-```
-
 Add event
 ```
 mutation {
@@ -93,11 +86,9 @@ mutation {
 Edit event
 ```
 mutation {
-  editEvent(input: {
-    id: "53",
-    title: "let it go",
-    location: "NBO"
-  }) {
+  editEvent(input: { id: "4", params: {
+    location: "Argon City"
+  }}) {
     event {
       id
       title
