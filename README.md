@@ -1,4 +1,9 @@
-# Requirements
+# bevents
+
+> A platform for event organizers to create and manage different types of events
+while making them easily accessible to target markets
+
+## Requirements
 
 - Ruby
 - Bundler
@@ -11,6 +16,6 @@ $ bin/setup
 
 $ bin/rails s
 
-[localhost:3000/graphiql](http://127.0.0.1:3000/graphiql)
+[localhost:3000/graphql](https://insomnia.rest/download)
 
 ## [Usage](./Usage.md)

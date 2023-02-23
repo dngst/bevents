@@ -33,7 +33,6 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'graphiql-rails'
   gem 'rubocop-graphql', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false

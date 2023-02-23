@@ -3,7 +3,7 @@
 Get all events
 
 ```
-query {
+{
   fetchEvents {
     id
     title
@@ -19,7 +19,7 @@ query {
 
 Get event by id
 ```
-query {
+{
   fetchEvent(id: 7) {
     id
     title
@@ -35,7 +35,7 @@ query {
 
 Register
 
-POST localhost:3000/auth
+/auth
 
 ```
 {
@@ -47,7 +47,7 @@ POST localhost:3000/auth
 
 Login
 
-POST localhost:3000/auth/sign_in
+/auth/sign_in
 
 ```
 {
@@ -101,7 +101,7 @@ mutation {
 Delete event
 ```
 mutation {
-  destroyEvent(input: { id: "7" }) {
+  destroyEvent(input: {id: "7"}) {
     id
   }
 }
@@ -110,7 +110,7 @@ mutation {
 Search event by title, description, location & category
 
 ```
-query {
+{
   searchEvents(description: "Ruby") {
     description
   }
@@ -119,11 +119,10 @@ query {
 
 Get x no. of events
 ```
-query {
+{
   searchEvents(first: 10) {
     id
     title
   }
 }
 ```
-
