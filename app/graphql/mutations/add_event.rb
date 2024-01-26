@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class AddEvent < Mutations::BaseMutation
     argument :params, Types::Input::EventInputType, required: true

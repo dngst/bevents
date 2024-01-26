@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Queries
   class FetchEvent < Queries::BaseQuery
     type Types::EventType, null: false

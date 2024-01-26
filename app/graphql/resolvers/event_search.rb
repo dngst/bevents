@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Resolvers
   class EventSearch < Resolvers::BaseSearchResolver
     type [Types::EventType], null: false
